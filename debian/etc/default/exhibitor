@@ -1,0 +1,6 @@
+#/etc/default/exhibitor
+
+#EXHIBITOR_OPTS="--port 8081 --configtype s3 --s3config $S3_BUCKET:$S3_PREFIX --s3region $S3_REGION --s3backup true --hostname $(hostname)"
+
+EXHIBITOR_OPTS="--port 8081 --configtype file --fsconfigdir /opt/zookeeper/conf --filesystembackup true --hostname $(hostname)"
+

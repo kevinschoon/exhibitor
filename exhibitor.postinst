@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -e
+
+mkdir -p /opt/exhibitor/conf /opt/exhibitor/zookeeper/data /opt/exhibitor/zookeeper/log /var/log/exhibitor
+chown -R zookeeper:zookeeper /opt/exhibitor
+chown -R zookeeper:zookeeper /var/log/exhibitor
+ln -s $(dpkg -L libzookeeper-java |grep -m1 \.jar) /opt/exhibitor/zookeeper/zookeeper.jar
+echo "manual" > /etc/init/zookeeper.override
